@@ -16,13 +16,11 @@ void FillRand(double Arr[ROWS][COLS]);
 void FillRand(char Arr[ROWS][COLS]);
 
 //Print
-void Print(int Arr[], const int n);
-void Print(double Arr[], const int n);
-void Print(char Arr[], const int n);
-void Print(int Arr[ROWS][COLS], const int ROWS, const int COLS);
-void Print(double Arr[ROWS][COLS]);
-void Print(char Arr[ROWS][COLS]);
+template<typename T>
+void Print(T Arr[], const int n);
 
+template<typename T>
+void Print(T Arr[ROWS][COLS]);
 //Sort
 void Sort(int Arr[], const int n);
 void Sort(double Arr[], const int n);
@@ -114,17 +112,17 @@ void main()
 		{4, 5, 6},
 		{7, 8, 9}
 	};
-	Print(Drr, ROWS, COLS);
+	Print(Drr);
 	cout << "---------------------------------------------------------------------------------------------" << endl;
 	FillRand(Drr, ROWS, COLS);
-	Print(Drr, ROWS, COLS);
+	Print(Drr);
 	cout << "---------------------------------------------------------------------------------------------" << endl;
 	cout << "Сумма элементов массива: " << Sum(Drr, ROWS, COLS) << endl;
 	cout << "Среднее арифметическое массива : " << Avg(Drr) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Drr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Drr) << endl;
 
-	//////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 	cout << "---------------------------------------------------------------------------------------------" << endl;
 	cout << "\t\t\DOUBLE" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
@@ -142,22 +140,22 @@ void main()
 	cout << "Максимальное значение в массиве: " << maxValueIn(Frr) << endl;
 
 	//////////////////////////////////////////////////////////////
-	cout << "---------------------------------------------------------------------------------------------" << endl;
-	cout << "\t\t\CHAR" << endl;
-	cout << "---------------------------------------------------------------------------------------------" << endl;
-	char Grr[ROWS][COLS];
-	FillRand(Grr);
-	Print(Grr);
-	cout << "---------------------------------------------------------------------------------------------" << endl;
-	Sort(Grr);
-	Print(Grr);
-	cout << "---------------------------------------------------------------------------------------------" << endl;
-	cout << "Сумма элементов массива: " << Sum(Grr) << endl;
-	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(Grr) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(Grr) << endl;
-	cout << "*********************************************************************************************" << endl;
-	cout << "\t\t\tДА ПРИБУДЕТ С ВАМИ СИЛА!!!" << endl;
+//	cout << "---------------------------------------------------------------------------------------------" << endl;
+//	cout << "\t\t\CHAR" << endl;
+//	cout << "---------------------------------------------------------------------------------------------" << endl;
+//	char Grr[ROWS][COLS];
+//	FillRand(Grr);
+//	Print(Grr);
+//	cout << "---------------------------------------------------------------------------------------------" << endl;
+//	Sort(Grr);
+//	Print(Grr);
+//	cout << "---------------------------------------------------------------------------------------------" << endl;
+//	cout << "Сумма элементов массива: " << Sum(Grr) << endl;
+//	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;
+//	cout << "Минимальное значение в массиве: " << minValueIn(Grr) << endl;
+//	cout << "Максимальное значение в массиве: " << maxValueIn(Grr) << endl;
+//	cout << "*********************************************************************************************" << endl;
+//	cout << "\t\t\tДА ПРИБУДЕТ С ВАМИ СИЛА!!!" << endl;
 }
 
 //реализация функий
@@ -227,7 +225,8 @@ void FillRand(char Arr[ROWS][COLS])
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void Print(int Arr[], const int n)
+template<typename T>
+void Print(T Arr[], const int n)
 {
 	//Вывод массива на экран:
 	for (int i = 0; i < n; i++)
@@ -237,51 +236,8 @@ void Print(int Arr[], const int n)
 	cout << endl;
 }
 
-void Print(double Arr[], const int n)
-{
-	//Вывод массива на экран:
-	for (int i = 0; i < n; i++)
-	{
-		cout << Arr[i] << "\t";
-	}
-	cout << endl;
-}
-
-void Print(char Arr[], const int n)
-{
-	//Вывод массива на экран:
-	for (int i = 0; i < n; i++)
-	{
-		cout << Arr[i] << "\t";
-	}
-	cout << endl;
-}
-
-void Print(int Arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << Arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
-
-void Print(double Arr[ROWS][COLS])
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << Arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
-
-void Print(char Arr[ROWS][COLS])
+template<typename T>
+void Print(T Arr[ROWS][COLS])
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -346,7 +302,7 @@ void Sort(char Arr[], const int n)
 }
 
 //Моя сортировка
-/*void Sort(int Arr[ROWS][COLS])
+void Sort(int Arr[ROWS][COLS])
 {
 	//Сортировка:
 	for (int x = 0; x < ROWS; x++)
@@ -368,10 +324,10 @@ void Sort(char Arr[], const int n)
 		}
 
 	}
-}*/
+}
 
 //Сортировка на лекции
-void Sort(int Arr[ROWS][COLS])
+/*void Sort(int Arr[ROWS][COLS])
 {
 	for (int x = 0; x < ROWS; x++)
 	{
@@ -391,8 +347,7 @@ void Sort(int Arr[ROWS][COLS])
 			}
 		}
 	}
-}
-
+}*/
 
 void Sort(double Arr[ROWS][COLS])
 {
