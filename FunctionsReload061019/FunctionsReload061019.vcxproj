@@ -123,7 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FunctionsReload.cpp" />
+    <ClCompile Include="Avg.cpp" />
+    <ClCompile Include="FillRand.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="maxValueIn.cpp" />
+    <ClCompile Include="minValueIn.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Sort.cpp" />
+    <ClCompile Include="Sum.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FunctionsReload.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
