@@ -171,7 +171,6 @@ void FillRand(int Arr[], const int n)
 	}
 }
 
-
 void FillRand(double Arr[], const int n)
 {
 	//«аполнение массива случайными числами:
