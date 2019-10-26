@@ -208,7 +208,6 @@ void FillRand(char Arr[], const int n)
 	}
 }
 
-
 void FillRand(int Arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
