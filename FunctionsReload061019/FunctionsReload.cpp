@@ -6,6 +6,13 @@ using namespace std;
 const int ROWS = 4;
 const int COLS = 5;
 
+#define INT_ARR1
+#define DOUBLE_ARR1
+#define CHAR_ARR1
+#define INT_ARR2
+#define DOUBLE_ARR2
+#define CHAR_ARR2
+
 //Прототипы функций - Functions declaration
 //FillRand
 void FillRand(int Arr[], const int n);
@@ -21,13 +28,14 @@ void Print(T Arr[], const int n);
 
 template<typename T>
 void Print(T Arr[ROWS][COLS]);
+
 //Sort
-void Sort(int Arr[], const int n);
-void Sort(double Arr[], const int n);
-void Sort(char Arr[], const int n);
-void Sort(int Arr[ROWS][COLS], const int ROWS, const int COLS);
-void Sort(double Arr[ROWS][COLS]);
-void Sort(char Arr[ROWS][COLS]);
+template<typename T>
+void Sort(T Arr[], const int n);
+
+template<typename T>
+void Sort(T Arr[ROWS][COLS]);
+
 
 //Sum
 int  Sum(int Arr[], const int n);
@@ -37,8 +45,9 @@ double Sum(double Arr[ROWS][COLS]);
 string Sum(char Arr[ROWS][COLS]);
 
 //Avg
-double Avg(int Arr[], const int n);
-double Avg(double Arr[], const int n);
+template<typename T>
+double Avg(T Arr[], const int n);
+
 double Avg(int Arr[ROWS][COLS]);
 double Avg(double Arr[ROWS][COLS]);
 char Avg(char Arr[ROWS][COLS]);
@@ -64,6 +73,8 @@ void main()
 	cout << "**************************************FUNCTIONS IN C++ (ФУНКЦИИ В C++)*************************************" << endl;
 	cout << "ОДНОМЕРНЫЕ МАССИВЫ:" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
+	
+#if defined INT_ARR1
 	cout << "\t\t\Int" << endl;
 	const int n = 5;
 	int Arr[n];
@@ -77,8 +88,9 @@ void main()
 	cout << "Среднее арифметическое : " << Avg(Arr, n) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Arr, n) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Arr, n) << endl;
+#endif
 
-	//////////////////////////////////////////////////////////////
+#if defined DOUBLE_ARR1
 	cout << "\t\t\Double" << endl;
 	const int m = 10;
 	double Brr[m];
@@ -92,7 +104,9 @@ void main()
 	cout << "Среднее арифметическое : " << Avg(Brr, m) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Brr, m) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Brr, m) << endl;
-	/////////////////////////////////////////////////////////////////////////////////////////
+#endif
+
+#if defined CHAR_ARR1
 	cout << "*********************************************************************************************" << endl;
 	cout << "\t\t\Char" << endl;
 	const int SIZE = 10;
@@ -101,10 +115,13 @@ void main()
 	Print(Crr, SIZE);
 	Print(Crr, SIZE);
 	Print(Crr, SIZE);
-	////////////////////////////////////////////////////////////////////////////////////////////
+#endif
+	
 	cout << "*********************************************************************************************" << endl;
 	cout << "ДВУХМЕРНЫЕ МАССИВЫ:" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
+	
+#if defined INT_ARR2
 	cout << "\t\t\INT" << endl;
 	int Drr[ROWS][COLS] =
 	{
@@ -121,8 +138,9 @@ void main()
 	cout << "Среднее арифметическое массива : " << Avg(Drr) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Drr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Drr) << endl;
+#endif
 
-	////////////////////////////////////////////////////////////////////////////
+#if defined DOUBLE_ARR2
 	cout << "---------------------------------------------------------------------------------------------" << endl;
 	cout << "\t\t\DOUBLE" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
@@ -138,28 +156,30 @@ void main()
 	cout << "Среднее арифметическое массива " << Avg(Frr) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Frr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Frr) << endl;
+#endif
+	
+#if defined CHAR_ARR2
+	cout << "---------------------------------------------------------------------------------------------" << endl;
+	cout << "\t\t\CHAR" << endl;
+	cout << "---------------------------------------------------------------------------------------------" << endl;
+	char Grr[ROWS][COLS];
+	FillRand(Grr);
+	Print(Grr);
+	cout << "---------------------------------------------------------------------------------------------" << endl;
+	Sort(Grr);
+	Print(Grr);
+	cout << "---------------------------------------------------------------------------------------------" << endl;
+	cout << "Сумма элементов массива: " << Sum(Grr) << endl;
+	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;
+	cout << "Минимальное значение в массиве: " << minValueIn(Grr) << endl;
+	cout << "Максимальное значение в массиве: " << maxValueIn(Grr) << endl;
+#endif
 
-	//////////////////////////////////////////////////////////////
-//	cout << "---------------------------------------------------------------------------------------------" << endl;
-//	cout << "\t\t\CHAR" << endl;
-//	cout << "---------------------------------------------------------------------------------------------" << endl;
-//	char Grr[ROWS][COLS];
-//	FillRand(Grr);
-//	Print(Grr);
-//	cout << "---------------------------------------------------------------------------------------------" << endl;
-//	Sort(Grr);
-//	Print(Grr);
-//	cout << "---------------------------------------------------------------------------------------------" << endl;
-//	cout << "Сумма элементов массива: " << Sum(Grr) << endl;
-//	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;
-//	cout << "Минимальное значение в массиве: " << minValueIn(Grr) << endl;
-//	cout << "Максимальное значение в массиве: " << maxValueIn(Grr) << endl;
-//	cout << "*********************************************************************************************" << endl;
-//	cout << "\t\t\tДА ПРИБУДЕТ С ВАМИ СИЛА!!!" << endl;
+	cout << "*********************************************************************************************" << endl;
+	cout << "\t\t\tДА ПРИБУДЕТ С ВАМИ СИЛА!!!" << endl;
 }
 
 //реализация функий
-///////////////////////////////////////////////////////////////////////////////////////////////////
 void FillRand(int Arr[], const int n)
 {
 	//Заполнение массива случайными числами:
@@ -250,7 +270,8 @@ void Print(T Arr[ROWS][COLS])
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-void Sort(int Arr[], const int n)
+template<typename T>
+void Sort(T Arr[], const int n)
 {
 	//Сортировка:
 	for (int i = 0; i < n; i++)
@@ -267,42 +288,9 @@ void Sort(int Arr[], const int n)
 	}
 }
 
-void Sort(double Arr[], const int n)
-{
-	//Сортировка:
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (Arr[j] < Arr[i])
-			{
-				double buffer = Arr[i];
-				Arr[i] = Arr[j];
-				Arr[j] = buffer;
-			}
-		}
-	}
-}
-
-void Sort(char Arr[], const int n)
-{
-	//Сортировка:
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (Arr[j] < Arr[i])
-			{
-				char buffer = Arr[i];
-				Arr[i] = Arr[j];
-				Arr[j] = buffer;
-			}
-		}
-	}
-}
-
 //Моя сортировка
-void Sort(int Arr[ROWS][COLS])
+template<typename T>
+void Sort(T Arr[ROWS][COLS])
 {
 	//Сортировка:
 	for (int x = 0; x < ROWS; x++)
@@ -348,51 +336,6 @@ void Sort(int Arr[ROWS][COLS])
 		}
 	}
 }*/
-
-void Sort(double Arr[ROWS][COLS])
-{
-	//Сортировка:
-	for (int x = 0; x < ROWS; x++)
-	{
-		for (int y = 0; y < COLS; y++)
-		{
-			for (int i = 0; i < ROWS; i++)
-			{
-				for (int j = 0; j < COLS; j++)
-				{
-					if (Arr[x][y] < Arr[i][j])
-					{
-						double buffer = Arr[x][y];
-						Arr[x][y] = Arr[i][j];
-						Arr[i][j] = buffer;
-					}
-				}
-			}
-		}
-	}
-}
-
-void Sort(char Arr[ROWS][COLS])
-{
-	for (int x = 0; x < ROWS; x++)
-	{
-		for (int y = 0; y < COLS; y++)
-		{
-			for (int i = 0; i < ROWS; i++)
-			{
-				for (int j = 0; j < COLS; j++)
-				{
-					if (Arr[x][y] < Arr[i][j])
-					{
-						double buffer = Arr[x][y];
-						Arr[x][y] = Arr[i][j];
-						Arr[i][j] = buffer;
-					}
-				}
-			}
-		}
-	}
-}
 
 ///////////////////////////////////////////////////////////
 int  Sum(int Arr[], const int n)
@@ -456,14 +399,10 @@ string Sum(char Arr[ROWS][COLS])
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-double Avg(int Arr[], const int n)
+template<typename T>
+double Avg(T Arr[], const int n)
 {
 	return (double)Sum(Arr, n) / n;
-}
-
-double Avg(double Arr[], const int n)
-{
-	return Sum(Arr, n) / n;
 }
 
 double Avg(int Drr[ROWS][COLS])
