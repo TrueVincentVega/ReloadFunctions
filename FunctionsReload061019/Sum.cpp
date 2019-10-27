@@ -27,15 +27,15 @@ T Sum(T Arr[ROWS][COLS])
 }
 
 
-//string Sum(char Arr[ROWS][COLS])
+//string sum(char arr[ROWS][COLS])
 //{
-//	string Res = "";
+//	string res = "";
 //	for (int i = 0; i < ROWS; i++)
 //	{
 //		for (int j = 0; j < COLS; j++)
 //		{
-//			Res += Arr[i][j];
+//			res += arr[i][j];
 //		}
 //	}
-//	return(Res);
+//	return(res);
 //}
