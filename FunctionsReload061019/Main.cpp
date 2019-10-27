@@ -23,7 +23,6 @@ Sum.cpp*/
 #define DOUBLE_ARR2
 #define CHAR_ARR2
 
-
 void main()
 {
 	setlocale(LC_ALL, "Russian"); //set russian lang in locale
