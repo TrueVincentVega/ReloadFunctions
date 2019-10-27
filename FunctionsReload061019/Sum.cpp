@@ -1,8 +1,9 @@
 #include "FunctionsReload.h"
 
-int  Sum(int Arr[], const int n)
+template<typename T>
+T Sum(T Arr[], const int n)
 {
-	int Sum = 0;
+	T Sum = 0;
 	for (int i = 0; i < n; i++)
 	{
 		Sum += Arr[i];
@@ -10,19 +11,10 @@ int  Sum(int Arr[], const int n)
 	return Sum;
 }
 
-double  Sum(double Arr[], const int n)
+template<typename T>
+T Sum(T Arr[ROWS][COLS])
 {
-	double Sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		Sum += Arr[i];
-	}
-	return Sum;
-}
-
-int  Sum(int Arr[ROWS][COLS])
-{
-	int Sum = 0;
+	T Sum = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -34,28 +26,16 @@ int  Sum(int Arr[ROWS][COLS])
 	return Sum;
 }
 
-double Sum(double Arr[ROWS][COLS])
-{
-	double Res = 0;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			Res += Arr[i][j];
-		}
-	}
-	return(Res);
-}
 
-string Sum(char Arr[ROWS][COLS])
-{
-	string Res = "";
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			Res += Arr[i][j];
-		}
-	}
-	return(Res);
-}
+//string Sum(char Arr[ROWS][COLS])
+//{
+//	string Res = "";
+//	for (int i = 0; i < ROWS; i++)
+//	{
+//		for (int j = 0; j < COLS; j++)
+//		{
+//			Res += Arr[i][j];
+//		}
+//	}
+//	return(Res);
+//}

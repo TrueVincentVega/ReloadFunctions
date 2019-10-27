@@ -1,6 +1,10 @@
 #include "FunctionsReload.h"
 #include "Print.cpp"
 #include "Sort.cpp"
+#include "Sum.cpp"
+#include "Avg.cpp"
+#include "minValueIn.cpp"
+#include "maxValueIn.cpp"
 
 /*Прототипы функций (Functions declaration) обьявлены в файлах FunctionsReload.h;
 Реализация функций (Functions realisation) обьявлена в файлах:
@@ -124,8 +128,8 @@ void main()
 	Sort(Grr);
 	Print(Grr);
 	cout << "---------------------------------------------------------------------------------------------" << endl;
-	cout << "Сумма элементов массива: " << Sum(Grr) << endl;
-	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;
+	/*cout << "Сумма элементов массива: " << Sum(Grr) << endl;
+	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;*/
 	cout << "Минимальное значение в массиве: " << minValueIn(Grr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Grr) << endl;
 #endif
