@@ -10,7 +10,7 @@ void Sort(T Arr[], const int n)
 		{
 			if (Arr[j] < Arr[i])
 			{
-				int buffer = Arr[i];
+				T buffer = Arr[i];
 				Arr[i] = Arr[j];
 				Arr[j] = buffer;
 			}
@@ -33,7 +33,7 @@ void Sort(T Arr[ROWS][COLS])
 				{
 					if (Arr[x][y] < Arr[i][j])
 					{
-						int temp = Arr[x][y];
+						T temp = Arr[x][y];
 						Arr[x][y] = Arr[i][j];
 						Arr[i][j] = temp;
 					}
