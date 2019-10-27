@@ -12,30 +12,28 @@ const int COLS = 5;
 void FillRand(int Arr[], const int n);
 void FillRand(double Arr[], const int n);
 void FillRand(char Arr[], const int n);
-void FillRand(int Arr[ROWS][COLS], const int ROWS, const int COLS);
+void FillRand(int Arr[ROWS][COLS]);
 void FillRand(double Arr[ROWS][COLS]);
 void FillRand(char Arr[ROWS][COLS]);
 
 //Print
-void Print(int Arr[], const int n);
-void Print(double Arr[], const int n);
-void Print(char Arr[], const int n);
-void Print(int Arr[ROWS][COLS], const int ROWS, const int COLS);
-void Print(double Arr[ROWS][COLS]);
-void Print(char Arr[ROWS][COLS]);
+template<typename T>
+void Print(T Arr[], const int n);
+
+template<typename T>
+void Print(T Arr[ROWS][COLS]);
 
 //Sort
-void Sort(int Arr[], const int n);
-void Sort(double Arr[], const int n);
-void Sort(char Arr[], const int n);
-void Sort(int Arr[ROWS][COLS], const int ROWS, const int COLS);
-void Sort(double Arr[ROWS][COLS]);
-void Sort(char Arr[ROWS][COLS]);
+template<typename T>
+void Sort(T Arr[], const int n);
+
+template<typename T>
+void Sort(T Arr[ROWS][COLS]);
 
 //Sum
 int  Sum(int Arr[], const int n);
 double  Sum(double Arr[], const int n);
-int  Sum(int Arr[ROWS][COLS], const int ROWS, const int COLS);
+int  Sum(int Arr[ROWS][COLS]);
 double Sum(double Arr[ROWS][COLS]);
 string Sum(char Arr[ROWS][COLS]);
 

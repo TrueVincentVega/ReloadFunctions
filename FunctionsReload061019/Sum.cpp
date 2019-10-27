@@ -20,7 +20,7 @@ double  Sum(double Arr[], const int n)
 	return Sum;
 }
 
-int  Sum(int Arr[ROWS][COLS], const int ROWS, const int COLS)
+int  Sum(int Arr[ROWS][COLS])
 {
 	int Sum = 0;
 	for (int i = 0; i < ROWS; i++)

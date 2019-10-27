@@ -12,7 +12,7 @@ double Avg(double Arr[], const int n)
 
 double Avg(int Drr[ROWS][COLS])
 {
-	return (Sum(Drr, ROWS, COLS) / (ROWS + COLS));
+	return (Sum(Drr)/(ROWS+COLS));
 }
 
 double Avg(double Arr[ROWS][COLS])

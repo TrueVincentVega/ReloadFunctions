@@ -1,4 +1,6 @@
 #include "FunctionsReload.h"
+#include "Print.cpp"
+#include "Sort.cpp"
 
 /*Прототипы функций (Functions declaration) обьявлены в файлах FunctionsReload.h;
 Реализация функций (Functions realisation) обьявлена в файлах:
@@ -10,13 +12,21 @@ Print.cpp
 Sort.cpp
 Sum.cpp*/
 
+#define INT_ARR1
+#define DOUBLE_ARR1
+#define CHAR_ARR1
+#define INT_ARR2
+#define DOUBLE_ARR2
+#define CHAR_ARR2
+
+
 void main()
 {
 	setlocale(LC_ALL, "Russian"); //set russian lang in locale
 	cout << "**************************************FUNCTIONS IN C++ (ФУНКЦИИ В C++)*************************************" << endl;
-
 	cout << "ОДНОМЕРНЫЕ МАССИВЫ:" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
+#if defined INT_ARR1
 	cout << "\t\t\Int" << endl;
 	const int n = 5;
 	int Arr[n];
@@ -32,8 +42,9 @@ void main()
 	cout << "Минимальное значение в массиве: " << minValueIn(Arr, n) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Arr, n) << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
-
+#endif
 	
+#if defined DOUBLE_ARR1
 	cout << "\t\t\Double" << endl;
 	const int m = 10;
 	double Brr[m];
@@ -49,7 +60,9 @@ void main()
 	cout << "Минимальное значение в массиве: " << minValueIn(Brr, m) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Brr, m) << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
-	
+#endif
+
+#if defined CHAR_ARR1
 	cout << "\t\t\Char" << endl;
 	const int SIZE = 10;
 	char Crr[SIZE];
@@ -57,10 +70,13 @@ void main()
 	FillRand(Crr, SIZE);
 	Print(Crr, SIZE);
 	cout << "---------------------------------------------------------------------------------------------" << endl;
-	
+#endif
+
 	cout << "*********************************************************************************************" << endl;
 	cout << "ДВУХМЕРНЫЕ МАССИВЫ:" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
+
+#if defined INT_ARR2
 	cout << "\t\t\INT" << endl;
 	int Drr[ROWS][COLS] =
 	{
@@ -68,17 +84,19 @@ void main()
 		{4, 5, 6},
 		{7, 8, 9}
 	};
-	Print(Drr, ROWS, COLS);
+	Print(Drr);
 	cout << "---------------------------------------------------------------------------------------------" << endl;
-	FillRand(Drr, ROWS, COLS);
-	Print(Drr, ROWS, COLS);
+	FillRand(Drr);
+	Print(Drr);
 	cout << "---------------------------------------------------------------------------------------------" << endl;
-	cout << "Сумма элементов массива: " << Sum(Drr, ROWS, COLS) << endl;
+	cout << "Сумма элементов массива: " << Sum(Drr) << endl;
 	cout << "Среднее арифметическое массива : " << Avg(Drr) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Drr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Drr) << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
+#endif
 
+#if defined DOUBLE_ARR2
 	cout << "\t\t\DOUBLE" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
 	double Frr[ROWS][COLS];
@@ -94,7 +112,9 @@ void main()
 	cout << "Минимальное значение в массиве: " << minValueIn(Frr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Frr) << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
+#endif
 
+#if defined CHAR_ARR2
 	cout << "\t\t\CHAR" << endl;
 	cout << "---------------------------------------------------------------------------------------------" << endl;
 	char Grr[ROWS][COLS];
@@ -108,6 +128,8 @@ void main()
 	cout << "Среднее арифметическое массива: " << Avg(Grr) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(Grr) << endl;
 	cout << "Максимальное значение в массиве: " << maxValueIn(Grr) << endl;
+#endif
+
 	cout << "*********************************************************************************************" << endl;
 	cout << "\t\t\tДА ПРИБУДЕТ С ВАМИ СИЛА!!!" << endl;
 }
